@@ -1,3 +1,5 @@
+**installing ansible and jenkins**
+
 sudo su
 yum -y install java wget
 wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
@@ -10,23 +12,13 @@ pip install --upgrade pip
 pip install boto3
 yum -y install python-paramiko git
 pip install ansible --upgrade
+mkdir /root/etc/ansible
+cd /root/etc/ansible
+wget https://github.com/mongoos2006/JenkinsAnsibleNotes/blob/master/ec2.ini
+wget https://github.com/mongoos2006/JenkinsAnsibleNotes/blob/master/ec2.py
+wget https://github.com/mongoos2006/JenkinsAnsibleNotes/blob/master/newPlay.yml
 
-
-sudo
-easy_install Jinja2
-
-
-
-yum install python-httplib2
-yum install sshpass
-
-
-
-
-
-
-
-
+**To start jenkins**
 
 service jenkins start
 chkconfig jenkins on
@@ -34,15 +26,4 @@ chkconfig jenkins on
 export AWS_ACCESS_KEY_ID='AKIAIXNQHYQT4SLG4DIA'
 export AWS_SECRET_ACCESS_KEY='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'
 
-
-copy 3 files into etc/ansible
-from that directory run
 ansible-playbook -i ec2.py newPlay.yml
-
-
-
-???
-wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
-sudo rpm -ivh epel-release-7-5.noarch.rpm
-sudo yum install ansible -y
-???
