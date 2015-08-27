@@ -23,7 +23,7 @@ wget https://github.com/mongoos2006/JenkinsAnsibleNotes/blob/master/newPlay.yml
 service jenkins start
 chkconfig jenkins on
 
-export AWS_ACCESS_KEY_ID='AKIAIXNQHYQT4SLG4DIA'
-export AWS_SECRET_ACCESS_KEY='O7IKnRqF6a1CXeDh7mB0aFz8znNacDqpSk/HnCN6'
+export AWS_ACCESS_KEY_ID='{your access key}'
+export AWS_SECRET_ACCESS_KEY='{your secret key}'
 
 ansible-playbook -i ec2.py newPlay.yml
