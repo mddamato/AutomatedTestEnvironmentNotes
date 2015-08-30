@@ -14,7 +14,7 @@
          group_id: "sg-2b915b4f"
          region: "us-east-1"
          wait: true
-         exact_count: 5
+         exact_count: 1
          count_tag:
             Name: Demo
          instance_tags:
