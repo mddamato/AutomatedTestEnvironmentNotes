@@ -8,11 +8,10 @@ yum -y install python-pip python-paramiko git
 pip install --upgrade boto boto3
 rpm -iUvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
 yum install ansible -y
-mkdir /root/etc/ansible
-cd /root/etc/ansible
+cd ~/../../etc/ansible/
 git clone https://github.com/mongoos2006/JenkinsAnsibleNotes.git
-export AWS_ACCESS_KEY_ID='{your access key}'
-export AWS_SECRET_ACCESS_KEY='{your secret key}'
+export AWS_ACCESS_KEY_ID='{access key}'
+export AWS_SECRET_ACCESS_KEY='{secret key}'
 
 
 **To run play**
