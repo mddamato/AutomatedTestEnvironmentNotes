@@ -8,8 +8,7 @@ yum -y install jenkins
 wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
 sudo rpm -ivh epel-release-7-5.noarch.rpm
 yum -y install python-pip
-pip install --upgrade pip
-pip install boto3
+pip install --upgrade pip boto boto3
 yum -y install python-paramiko git
 pip install ansible --upgrade
 
