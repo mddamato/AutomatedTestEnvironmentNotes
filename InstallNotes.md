@@ -12,11 +12,12 @@ pip install --upgrade pip
 pip install boto3
 yum -y install python-paramiko git
 pip install ansible --upgrade
+
 mkdir /root/etc/ansible
 cd /root/etc/ansible
-wget https://github.com/mongoos2006/JenkinsAnsibleNotes/blob/master/ec2.ini
-wget https://github.com/mongoos2006/JenkinsAnsibleNotes/blob/master/ec2.py
-wget https://github.com/mongoos2006/JenkinsAnsibleNotes/blob/master/newPlay.yml
+
+git clone https://github.com/mongoos2006/JenkinsAnsibleNotes.git
+
 
 **To start jenkins**
 

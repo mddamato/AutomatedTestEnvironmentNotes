@@ -8,9 +8,9 @@
 
     - name: Provision a set of instances
       ec2:
-         key_name: Box1KeyPair
+         key_name: KeyPair2
          instance_type: t2.micro
-         image: "ami-12663b7a"
+         image: "ami-0d4cfd66"
          group_id: "sg-2b915b4f"
          region: "us-east-1"
          wait: true
