@@ -1,4 +1,7 @@
 # Test environment setup - Serenity/JBehave/EC2 #
+The AMI ID for the instance I chose is: ami-d05e75b8
+This is an Ubuntu OS
+The size needs to be t2.small, or at least with 2gb RAM. I had memory problems with anything less than that.
 
 ## Installation of major dependencies ##
 **INSTALL: Java 8, X virtual framebuffer, gradle 2.6, fonts, xserver-xorg-core, firefox**
