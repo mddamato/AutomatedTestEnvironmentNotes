@@ -79,7 +79,7 @@ export AWS_ACCESS_KEY_ID='{access key}'
 export AWS_SECRET_ACCESS_KEY='{secret key}'
 openssl des3 -d -in encryptedKey.pem -out KeyPair2.pem
 ```
-Enter password from passwordFile when prompted to decrypt encryptedKey.pem
+Enter password from passwordFile (located locally on original machine only) when prompted to decrypt encryptedKey.pem
 
 **To run play**
 ```bash
