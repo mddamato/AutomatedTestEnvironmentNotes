@@ -73,7 +73,7 @@ pip install --upgrade boto boto3
 rpm -iUvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
 yum install ansible -y
 cd ~/../../etc/ansible/
-git clone https://github.com/mongoos2006/JenkinsAnsibleNotes.git
+git clone https://github.com/mongoos2006/AutomatedTestEnvironmentNotes.git
 cd JenkinsAnsibleNotes
 export AWS_ACCESS_KEY_ID='{access key}'
 export AWS_SECRET_ACCESS_KEY='{secret key}'
