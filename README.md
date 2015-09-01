@@ -1,6 +1,6 @@
 # Test environment setup - Serenity/JBehave/EC2 #
-The AMI ID for the instance I chose is: ami-d05e75b8
-This is an Ubuntu OS
+The AMI ID for the instance I chose is: ami-d05e75b8  
+This is an Ubuntu OS.  
 The size needs to be t2.small, or at least with 2gb RAM. I had memory problems with anything less than that.
 
 ## Installation of major dependencies ##
@@ -64,6 +64,8 @@ navigate to publicDNS:8080/serenity
 
 
 # Ansible/Jenkins Setup - Serenity/JBehave/EC2 #
+redhat instance t2.micro  
+
 ## installing ansible and jenkins ##
 ```bash
 sudo su
