@@ -17,7 +17,7 @@ export GRADLE_OPTS="-Xmx2048m -Xms1024m -XX:+CMSClassUnloadingEnabled -XX:+HeapD
 
 ## Installation of virtual display ##
 ```bash
-Xvfb :99 -screen 0 1024x768x24 -ac 2>&1 >/dev/null &
+Xvfb :99 -screen 0 1024x768x24 -ac 2>&1 >/dev/null
 export DISPLAY=:99
 ```
 
