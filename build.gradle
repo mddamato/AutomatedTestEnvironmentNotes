@@ -25,12 +25,12 @@ apply plugin: 'net.serenity-bdd.aggregator'
 dependencies {
 	compile 'net.serenity-bdd:serenity-junit:1.1.24'
 	compile 'net.serenity-bdd:serenity-core:1.1.24'
-	compile 'net.serenity-bdd:serenity-jbehave:1.1.24'
+	compile 'net.serenity-bdd:serenity-jbehave:1.5.0'
 	
 	testCompile('org.assertj:assertj-core:3.1.0')
 	testCompile 'org.springframework:spring-core:4.0.1.RELEASE'
-	compile 'org.jbehave:jbehave-core:3.10'
-	testCompile 'de.codecentric:jbehave-junit-runner:1.1.0'
+	compile 'org.jbehave:jbehave-core:4.0.4'
+	testCompile 'de.codecentric:jbehave-junit-runner:1.2.0'
 	testCompile 'com.thoughtworks.paranamer:paranamer:2.4'
 	testCompile 'commons-lang:commons-lang:2.6'
 	testCompile 'org.codehaus.plexus:plexus-utils:3.0.21'
