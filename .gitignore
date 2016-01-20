@@ -1,2 +1,8 @@
 passwordFile.txt
 
+/build/
+/bin/
+.classpath
+/.gradle/
+/.project
+/.settings/

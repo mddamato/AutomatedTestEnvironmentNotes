@@ -10,22 +10,25 @@ sudo add-apt-repository ppa:webupd8team/java -y
 sudo add-apt-repository ppa:cwchien/gradle -y
 sudo apt-get update
 sudo apt-get install -y oracle-java8-installer
-sudo apt-get -y install xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic firefox xvfb git gradle-2.6 xserver-xorg-core
+sudo apt-get -y install xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic xserver-xorg-core
+sudo apt-get -y install dbus-x11 firefox xvfb git gradle-2.6
+
 export JAVA_HOME=/usr/lib/jvm/java-8-oracle/
 export GRADLE_OPTS="-Xmx2048m -Xms1024m -XX:+CMSClassUnloadingEnabled -XX:+HeapDumpOnOutOfMemoryError"
 ```
 
 ## Installation of virtual display ##
 ```bash
-Xvfb :99 -screen 0 1024x768x24 -ac 2>&1 >/dev/null
+sudo Xvfb +extension RANDR :99 -screen 0 1024x768x24 -ac 2>&1 >/dev/null &
 export DISPLAY=:99
 ```
 
+
 ## Clone Git repo and test ##
 ```bash
-git clone https://github.com/mongoos2006/SerenityJBehaveWiki.git
-cd SerenityJBehaveWiki
-gradle clean test aggregate --info
+git clone https://github.com/mongoos2006/AutomatedTestEnvironmentNotes.git
+cd AutomatedTestEnvironmentNotes
+gradle clean test aggregate --debug
 ```
 All reports should now be located in ~/SerenityJBehaveWiki/target/site/serenity/
 

@@ -1,0 +1,50 @@
+
+repositories
+{
+	mavenLocal()
+	mavenCentral()
+}
+
+buildscript
+{
+	repositories
+	{
+		mavenLocal()
+		mavenCentral()
+    }
+	dependencies
+	{
+        classpath("net.serenity-bdd:serenity-gradle-plugin:1.0.56")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+dependencies {
+	compile 'net.serenity-bdd:serenity-junit:1.0.56'
+	compile 'net.serenity-bdd:serenity-core:1.0.56'
+	testCompile('org.assertj:assertj-core:3.1.0')
+    compile 'net.serenity-bdd:serenity-jbehave:1.0.23'
+	testCompile 'org.springframework:spring-core:4.0.1.RELEASE'
+	compile 'org.jbehave:jbehave-core:3.10'
+	testCompile 'de.codecentric:jbehave-junit-runner:1.1.0'
+	testCompile 'com.thoughtworks.paranamer:paranamer:2.4'
+	testCompile 'commons-lang:commons-lang:2.6'
+	testCompile 'org.codehaus.plexus:plexus-utils:3.0.21'
+}
+
+test {
+	systemProperty "storyPath", System.getProperty("storyPath")
+	if(System.getProperty("storyPath") == null || System.getProperty("storyPath").isEmpty())
+	{
+		//to run one story at a time for development
+		//System.setProperty("storyPath", "/*")
+		//storyPath must be of form: /Capability/Feature/story
+		//no ".story" required
+		// -DstoryPath=/Capability/Feature/story
+		//-mdd
+	}
+}
+gradle.startParameter.continueOnFailure = true
