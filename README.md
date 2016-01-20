@@ -12,10 +12,13 @@ sudo apt-get update
 sudo apt-get install -y oracle-java8-installer
 sudo apt-get -y install xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic xserver-xorg-core
 sudo apt-get -y install dbus-x11 firefox xvfb git gradle-2.6
-
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle/
-export GRADLE_OPTS="-Xmx2048m -Xms1024m -XX:+CMSClassUnloadingEnabled -XX:+HeapDumpOnOutOfMemoryError"
+echo 'export JAVA_HOME=/usr/lib/jvm/java-8-oracle/' >> ~/.profile
+echo 'export GRADLE_OPTS="-Xmx2048m -Xms1024m -XX:+CMSClassUnloadingEnabled -XX:+HeapDumpOnOutOfMemoryError"' >> ~/.profile
+echo 'export DISPLAY=:99' >> ~/.profile
+sudo reboot
 ```
+
+i would do a reboot here.
 
 ## Installation of virtual display ##
 ```bash
@@ -57,11 +60,19 @@ add to serenity.xml:
 ```xml
 <Context path="/serenity" docBase="/usr/share/tomcat7/webapps/serenity"/>
 ```
+
 **export report**
 ```bash
-sudo cp -r ~/SerenityJBehaveWiki/target/site/serenity /usr/share/tomcat7/webapps/
+sudo cp -r ~/AutomatedTestEnvironmentNotes/target/site/serenity /usr/share/tomcat7/webapps/
 sudo service tomcat7 restart
 navigate to publicDNS:8080/serenity
+```
+**to refresh**
+```
+sudo service tomcat7 stop
+sudo rm -rf /usr/share/tomcat7/webapps/serenity
+sudo cp -r ~/AutomatedTestEnvironmentNotes/target/site/serenity /usr/share/tomcat7/webapps/
+sudo service tomcat7 start
 ```
 
 
