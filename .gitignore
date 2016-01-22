@@ -1,5 +1,5 @@
 passwordFile.txt
-
+/target/
 /build/
 /bin/
 .classpath
