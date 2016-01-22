@@ -2,6 +2,7 @@
 The AMI ID for the instance I chose is: ami-d05e75b8  
 This is an Ubuntu OS.  
 The size needs to be t2.small, or at least with 2gb RAM. I had memory problems with anything less than that.
+Running as root seems to work better
 
 ## Installation of major dependencies ##
 **INSTALL: Java 8, X virtual framebuffer, gradle 2.6, fonts, xserver-xorg-core, firefox**
@@ -11,10 +12,11 @@ sudo add-apt-repository ppa:cwchien/gradle -y
 sudo apt-get update
 sudo apt-get install -y oracle-java8-installer
 sudo apt-get -y install xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic xserver-xorg-core
-sudo apt-get -y install dbus-x11 firefox xvfb git gradle-2.6
+sudo apt-get -y install dbus-x11 firefox xvfb git gradle-2.6 libxtst6
 echo 'export JAVA_HOME=/usr/lib/jvm/java-8-oracle/' >> ~/.profile
 echo 'export GRADLE_OPTS="-Xmx2048m -Xms1024m -XX:+CMSClassUnloadingEnabled -XX:+HeapDumpOnOutOfMemoryError"' >> ~/.profile
 echo 'export DISPLAY=:99' >> ~/.profile
+echo 'JAVA_OPTS="-Djava.awt.headless=true -Dawt.toolkit=sun.awt.HToolkit"' >> ~/.profile
 sudo reboot
 ```
 
@@ -31,7 +33,7 @@ export DISPLAY=:99
 ```bash
 git clone https://github.com/mongoos2006/AutomatedTestEnvironmentNotes.git
 cd AutomatedTestEnvironmentNotes
-gradle clean test aggregate --debug
+sudo gradle clean test aggregate --debug
 ```
 All reports should now be located in ~/SerenityJBehaveWiki/target/site/serenity/
 
