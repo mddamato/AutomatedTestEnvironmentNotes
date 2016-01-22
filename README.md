@@ -16,7 +16,7 @@ sudo apt-get -y install dbus-x11 firefox xvfb git gradle-2.6 libxtst6
 echo 'export JAVA_HOME=/usr/lib/jvm/java-8-oracle/' >> ~/.profile
 echo 'export GRADLE_OPTS="-Xmx2048m -Xms1024m -XX:+CMSClassUnloadingEnabled -XX:+HeapDumpOnOutOfMemoryError"' >> ~/.profile
 echo 'export DISPLAY=:99' >> ~/.profile
-echo 'JAVA_OPTS="-Djava.awt.headless=true -Dawt.toolkit=sun.awt.HToolkit"' >> ~/.profile
+echo 'export JAVA_OPTS="-Djava.awt.headless=true -Dawt.toolkit=sun.awt.HToolkit"' >> ~/.profile
 sudo reboot
 ```
 
