@@ -71,10 +71,8 @@ navigate to publicDNS:8080/serenity
 ```
 **to refresh**
 ```bash
-sudo service tomcat7 stop
-sudo rm -rf /usr/share/tomcat7/webapps/serenity
 sudo cp -r ~/AutomatedTestEnvironmentNotes/target/site/serenity /usr/share/tomcat7/webapps/
-sudo service tomcat7 start
+sudo service tomcat7 restart
 ```
 
 
