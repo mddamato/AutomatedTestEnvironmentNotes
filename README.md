@@ -70,7 +70,7 @@ sudo service tomcat7 restart
 navigate to publicDNS:8080/serenity
 ```
 **to refresh**
-```
+```bash
 sudo cp -r ~/AutomatedTestEnvironmentNotes/target/site/serenity /usr/share/tomcat7/webapps/
 sudo service tomcat7 restart
 ```
@@ -109,4 +109,38 @@ ansible-playbook -i ec2.py newPlay.yml
 ```bash
 service jenkins start
 chkconfig jenkins on
+```
+
+## notes regarding using docker for running tests ##
+
+start an image AIM = ubuntu-trusty-14.04-amd64-server-20160114.5 (ami-fce3c696)
+
+need to add to serenity.properties file the information required log into the selenium grid server
+```
+webdriver.remote.url=http://localhost:4444/wd/hub
+webdriver.remote.driver=chrome
+webdriver.remote.os=LINUX
+```
+
+install docker stuff:
+```bash
+wget -qO- https://get.docker.com/ | sh
+sudo usermod -aG docker ec2-user
+sudo docker pull mongoos2006/ubuntu-java-gradle
+sudo docker run -i -t mongoos2006/ubuntu-java-gradle /bin/bash
+```
+
+pull ubuntu image and open bash
+```bash
+
+
+```
+now the bash of the new docker image is open
+
+installation of gradle and java
+```bash
+apt-get install software-properties-common
+sudo add-apt-repository ppa:webupd8team/java -y
+sudo add-apt-repository ppa:cwchien/gradle -y
+sudo apt-get update&&sudo apt-get dist-upgrade&&sudo apt-get install -y oracle-java8-installer gradle-2.6
 ```
