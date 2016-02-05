@@ -148,7 +148,7 @@ sudo apt-get update&&sudo apt-get dist-upgrade&&sudo apt-get install -y oracle-j
 
 ## With the new NVIDEA AMI - amzn-nvidea-gradle-java-docker-tomcat ami-a7c0e9cd:
 As ec2-user:
-```bash
+```
 $ git clone gitProjectURL.git
 $ cd gitProject/
 $ docker run -d -p 4444:4444 -e JAVA_OPTS=-Xmx2048m 7026398ddafe
@@ -161,11 +161,11 @@ webdriver.remote.driver=firefox
 webdriver.remote.os=LINUX
 ```
 run tests:
-```bash
+```
 $ gradle clean test aggregate --info
 ```
 If you want to host report on tomcat server to see results:
-```bash
+```
 $ sudo cp -r ~/gitProject/target/site/serenity /usr/share/tomcat7/webapps/
 $ sudo service tomcat7 restart
 ```
